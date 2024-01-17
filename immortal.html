@@ -1,0 +1,99 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Portfolio | Stephen Jones | Immortal</title>
+  </head>
+  <body> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Stephen Jones </h3>
+          <p>I'm an experienced games programmer, specialising in C# and the Unity engine.</p>
+          <p><b>Junior Programmer for 2 years</b><br/><i>Second Impact Games</i><br/>Part of the team behind <i>Super Crazy Rhythm Castle</i></p>
+          <p><b>MSc Computer Games Technology, Distinction</b><br/><i>Abertay University</i><br/>Won the Andrew De Vries Memorial Prize for outstanding performance</p>
+          <p><b>BA Mathematics, 2.2</b><br/><i>St John's College, University of Cambridge</i></p>
+          <p>stephenaidanjones@gmail.com</p>
+        </div>
+        <div class="col-md-8">
+          <h1>Immortal</h1>
+                              <div class="video-wrapper">
+                                <iframe class="video" src="videos/immortal.mp4" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+                              </div>
+          <p>
+            Immortal is a 3D scene of a famous historical chess position, with the board and
+            pieces lit by a single flickering candle. The candlelight casts shadows which are
+            calculated in real time using a shadow map. The scene is rendered using DirectX 11.
+            The camera can be panned and rotated and the audio's volume can be changed by the
+            user with keyboard inputs.
+            
+          </p>
+          <h3>Features</h3>
+          <p>
+            Meshes are loaded from .obj files and textures from .png files, allowing objects to
+            be rendered in the world. Each object also keeps track of its own material, position,
+            rotation and scale, while higher level classes deal with different shaders, input
+            layouts and other objects that are bound to the graphics pipeline. Music is also
+            loaded from a .wav file to play in the background.
+          </p>
+          <p>
+            The scene implements ambient, diffuse and specular lighting (with the Phong reflection
+            model) from a single light source, the candle. The candle's position and attenuation
+            (constant, linear and quadratic) are varied at each frame on a bounded random walk
+            around a fixed centre to give the impression of flickering.
+          </p>
+          <p>
+            A shadow map (or depth map) is used to calculate shadows in real time, which is the
+            main way that the position of the light source changing is conveyed (the light source
+            itself is not rendered). This operates by first rendering the scene to a texture from
+            the point of view of the light source, with each pixel being coloured according to
+            its distance from the light source. This texture is passed to the second pixel shader
+            and enables it to determine whether each pixel is in the line of sight of the light
+            source (in which case it is lit using diffuse and specular lighting as well as
+            ambient) or not (in which case it is lit only by ambient light).
+            
+          </p>
+          <h3>What would I change?</h3>
+          <p>
+            The main issue in this project is that the shadows can in places appear pixelated due
+            to the shadow map implementation. This occurs because the camera is usually closer to
+            the scene than the theoretical position of the candle, but the shadow map is rendered
+            at the same resolution as the viewport is.
+          </p>
+          <p>
+            Because of the way the scene is set up, the shadow map is only rendered from the
+            point of view of a single light source and only in one direction from that light
+            source. A more advanced implementation would involve rendering six shadow maps (one in
+            each cardinal direction) from each light source in the scene. This would of course
+            require much more computation time and would likely benefit from culling or other
+            optimisation methods. This would require substantial changes to the project's
+            structure.
+            
+          </p>
+          <h3>References</h3>
+          <p>
+            Almost all the code in this project is my own but the architecture used is closely
+            based on that shown in ChiliTomatoNoodle's Hardware 3D tutorial series on YouTube
+            (<a href="https://www.youtube.com/watch?v=_4FArgOX1I4&list=PLqCJpWy5Fohd3S7ICFXwUomYW0Wv67pDD&index=5">link</a>).
+          </p>
+          <p>
+            The only file not written by me is OBJ_Loader.h, which was written by Robert Smith
+            (<a href="https://github.com/Bly7/OBJ-Loader">GitHub</a>); this code is used to
+            convert an .obj file into vectors of vertices and normals that can be read by the
+            rest of the project.
+          </p>
+          <p>
+            The music featured is a royalty-free track, <i>The Medieval Banquet</i> by Shane
+            Ivers of
+            <a href="https://silvermansound.com">silvermansound.com</a>.
+          </p>
+          <p>All 3D models and textures were made by me.</p>
+          <p><a href="index.html">Back to main page</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

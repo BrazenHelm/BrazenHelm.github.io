@@ -1,3 +1,7 @@
+block data
+
+include ../utils
+
 doctype html 
 html(lang="en")
     head 
@@ -5,19 +9,20 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(
             rel="stylesheet"
-            href="css/style.css"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         )
         link(
             rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            href="css/style.css"
         )
-        title Portfolio | Stephen Jones
+        block title 
+            title Portfolio | Stephen Jones
     body 
         .container
-            .row 
-                .col-md-4 
-                    include ../includes/sidebar
-                .col-md-8 
+            .row
+                .col-md-4
+                    include sidebar
+                .col-md-8
                     block content 
                         main 
                             p This is the main part of the page

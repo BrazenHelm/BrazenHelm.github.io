@@ -1,16 +1,7 @@
 extends templates/layout
 
 block content 
-    h1 Portfolio 
-    hr 
-    h3 Super Crazy Rhythm Castle
-        iframe(
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/fiNxs6CEwQ0?si=OCmbFZ2vnJ_CEvlK"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        )
-    a(href="projects/super-crazy-rhythm-castle.html") More info
+    include data/projects 
+    h1 Portfolio
+    each project in projects 
+        +projectPreview(project)
