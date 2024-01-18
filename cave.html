@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <title>Portfolio | Stephen Jones | Cave</title>
+    <title>Portfolio - Stephen Jones - Cave</title>
   </head>
   <body> 
     <div class="container">
@@ -19,7 +19,10 @@
           <p>stephenaidanjones@gmail.com</p>
         </div>
         <div class="col-md-8">
-          <h1>Cave</h1><img class="media-max-width" src="images/cave.png"/>
+          <h1>Cave</h1>
+                    <div class="video-wrapper">
+                      <iframe class="video" src="videos/cave.mp4" title="Video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+                    </div><br/>
           <p>
             Cave is scene of a low-poly, procedurally generated cave with a shaft of bright
             sunlight from a hole in the wall to illuminate it. The scene is rendered using
@@ -27,7 +30,24 @@
             with first person controls using mouse and keyboard inputs; there is collision
             detection and handling to avoid clipping into the cave walls.
           </p>
-          <p><a href="index.html">Back to main page</a></p>
+          <p>
+            The cave mesh is generated using a cellular automaton, which acts 
+            similarly to Conway's famous <i>Game of Life</i> to produce a pattern of filled 
+            and empty cells in a cubic grid. Scalar values are assigned to each grid cell,
+            then marching cubes is used to build an approximate isosurface for the mesh.
+          </p>
+          <p>
+            The volumetric lighting in the scene uses a fine "god ray" mesh which is only
+            visible when in direct sunlight, computed using a shadow map. The bloom effect 
+            is made using a combination of three two-pass box blurs, each performed on a 
+            different downsampled version of the original god ray render, as a more efficient 
+            way to approximate a wide Gaussian blur.
+          </p>
+          <p>
+            The music featured is a royalty-free track, <i>Zen Garden</i> by Shane Ivers of
+            <a href="https://silvermansound.com">silvermansound.com</a>.
+          </p>
+          <p align="right"><a href="index.html">Back to main page</a></p>
         </div>
       </div>
     </div>

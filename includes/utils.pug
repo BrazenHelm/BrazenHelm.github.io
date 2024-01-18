@@ -1,0 +1,47 @@
+mixin projectPreview(project)
+    .project 
+        hr 
+        h3= `${project.name} (${project.date})`
+        +previewVisual(project)
+        p
+        if project.name == "Super Crazy Rhythm Castle"
+            include scrc-preview 
+        else
+            p= project.previewDescription
+        if project.hasOwnPage == "true"
+            p(align="right")
+                a(href=`${project.fileName}`) More information
+
+mixin previewVisual(project)
+    if project.previewVisualType == "youtubeEmbed"
+        +youtubeEmbed(project.youtubeLink)
+    if project.previewVisualType == "video"
+        +video(project.videoFilename)
+    if project.previewVisualType == "image"
+        +image(project.imageFilename)
+
+
+mixin youtubeEmbed(link)
+    .video-wrapper 
+        iframe.video(
+            src=`${link}`
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        )
+
+mixin video(filename)
+    .video-wrapper
+        iframe.video(
+            src=`videos/${filename}`
+            title="Video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        )
+
+mixin image(filename)
+    img.media-max-width(
+        src=`images/${filename}`
+    )

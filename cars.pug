@@ -1,0 +1,22 @@
+extends templates/project
+
+block data
+    - const projectName = "NEAT Cars"
+
+block description 
+    +video("cars.mp4")
+    br
+    p.
+        Cars are driven around a racetrack by an artificial neural network. These drivers 
+        are optimised using the Neuroevolution of Augmenting Topologies (NEAT) algorithm. 
+        The operation of the genetic algorithm can be controlled using commands in a console 
+        window, and the results can be written to a file. The graphics in the project use 
+        the SFML library.
+    p.
+        The inputs of a car's neural network are given by sensors which measure the distance 
+        from the car to the nearest wall in various directions. The outputs correspond to 
+        controls for accelerate, brake, turn left, and turn right.
+    p.
+        The algorithm produced many highly competent networks, much better than a human
+        player. Using separate tracks for training and testing indicated that after 25 or 
+        so generations, the drivers would usually begin to suffer from overfitting.

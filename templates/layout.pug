@@ -1,6 +1,6 @@
 block data
 
-include ../utils
+include ../includes/utils
 
 doctype html 
 html(lang="en")
@@ -16,12 +16,12 @@ html(lang="en")
             href="css/style.css"
         )
         block title 
-            title Portfolio | Stephen Jones
+            title Portfolio - Stephen Jones
     body 
         .container
             .row
                 .col-md-4
-                    include sidebar
+                    include ../includes/sidebar
                 .col-md-8
                     block content 
                         main 

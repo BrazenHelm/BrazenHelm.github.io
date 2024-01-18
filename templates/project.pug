@@ -1,20 +1,16 @@
 extends layout
 
 block title 
-    title= "Portfolio | Stephen Jones | " + projectName
+    title= "Portfolio - Stephen Jones - " + projectName
 
 block content 
     include ../data/projects
-    include ../utils
+    include ../includes/utils
 
     h1= projectName
-
-    each project in projects 
-        if project.name == projectName
-            +previewVisual(project)
 
     block description
         p empty project description
 
-    p
+    p(align="right")
         a(href="index.html") Back to main page

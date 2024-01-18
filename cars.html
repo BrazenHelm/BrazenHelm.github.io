@@ -1,0 +1,48 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Portfolio - Stephen Jones - NEAT Cars</title>
+  </head>
+  <body> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Stephen Jones </h3>
+          <p>I'm an experienced games programmer, specialising in C# and the Unity engine.</p>
+          <p><b>Junior Programmer for 2 years</b><br/><i>Second Impact Games</i><br/>Part of the team behind <i>Super Crazy Rhythm Castle</i></p>
+          <p><b>MSc Computer Games Technology, Distinction</b><br/><i>Abertay University</i><br/>Won the Andrew De Vries Memorial Prize for outstanding performance</p>
+          <p><b>BA Mathematics, 2.2</b><br/><i>St John's College, University of Cambridge</i></p>
+          <p>stephenaidanjones@gmail.com</p>
+        </div>
+        <div class="col-md-8">
+          <h1>NEAT Cars</h1>
+                    <div class="video-wrapper">
+                      <iframe class="video" src="videos/cars.mp4" title="Video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+                    </div><br/>
+          <p>
+            Cars are driven around a racetrack by an artificial neural network. These drivers 
+            are optimised using the Neuroevolution of Augmenting Topologies (NEAT) algorithm. 
+            The operation of the genetic algorithm can be controlled using commands in a console 
+            window, and the results can be written to a file. The graphics in the project use 
+            the SFML library.
+          </p>
+          <p>
+            The inputs of a car's neural network are given by sensors which measure the distance 
+            from the car to the nearest wall in various directions. The outputs correspond to 
+            controls for accelerate, brake, turn left, and turn right.
+          </p>
+          <p>
+            The algorithm produced many highly competent networks, much better than a human
+            player. Using separate tracks for training and testing indicated that after 25 or 
+            so generations, the drivers would usually begin to suffer from overfitting.
+          </p>
+          <p align="right"><a href="index.html">Back to main page</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
