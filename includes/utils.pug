@@ -8,9 +8,13 @@ mixin projectPreview(project)
             include scrc-preview 
         else
             p= project.previewDescription
-        if project.hasOwnPage == "true"
-            p(align="right")
-                a(href=`${project.fileName}`) More information
+        p.right-align
+            if project.hasGithub == "true"
+                span.right-padding-30
+                    a(href=`${project.githubLink}`) GitHub
+            if project.hasOwnPage == "true"
+                span
+                    a(href=`${project.fileName}`) More information
 
 mixin previewVisual(project)
     if project.previewVisualType == "youtubeEmbed"

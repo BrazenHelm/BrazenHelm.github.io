@@ -12,5 +12,11 @@ block content
     block description
         p empty project description
 
-    p(align="right")
-        a(href="index.html") Back to main page
+    p.right-align
+        each project in projects
+            if project.name == projectName && project.hasGithub == "true"
+                span.right-padding-30
+                    a(href=`${project.githubLink}`) GitHub
+        span
+            a(href="index.html") Back to main page
+        
