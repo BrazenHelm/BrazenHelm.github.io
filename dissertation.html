@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Portfolio - Stephen Jones - Masters Dissertation</title>
+  </head>
+  <body> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Stephen Jones </h3>
+          <p>I'm an experienced games programmer, specialising in C# and the Unity engine.</p>
+          <p><b>Junior Programmer for 2 years</b><br/><i>Second Impact Games</i><br/>Part of the team behind <a href="https://www.secondimpactgames.com/scrc.html"><i>Super Crazy Rhythm Castle</i></a></p>
+          <p><b>MSc Computer Games Technology, Distinction</b><br/><i>Abertay University</i><br/>Won the Andrew De Vries Memorial Prize for outstanding performance</p>
+          <p><b>BA Mathematics, 2.2</b><br/><i>St John's College, University of Cambridge</i></p>
+          <p>stephenaidanjones@gmail.com</p>
+        </div>
+        <div class="col-md-8">
+          <h1>Masters Dissertation</h1><img class="media-max-width" src="images/logic-maze.png"/><br/>
+          <p>
+            <i>Investigating Puzzle Difficulty Assessment: Minimum Solution Length is the Best 
+            Indicator of Logic Maze Difficulty</i> is an original research project for my MSc 
+            at Abertay University. It concerns the evaluation of puzzle difficulty by a computer, 
+            investigating which properties of a puzzle are the most useful in determining 
+            difficulty. The puzzles used were logic mazes of a type seen in <i>The Witness</i> 
+            (2016).
+          </p>
+          <p>
+            I created 30 logic maze puzzles by hand and a website on which volunteers could solve 
+            these puzzles and rate their difficulty. It also included a brief, tutorial for the 
+            puzzles, and a debrief. The data collected from this website was used to estimate the 
+            true difficulty of each puzzles for humans. The website was created using the Django 
+            framework for Python, also involving elements of HTML, Javascript and CSS.
+          </p>
+          <p>
+            While collecting data from the website, I created two solvers in C++. One solved the 
+            puzzles using brute force and the other used an expert system designed to imitate a 
+            human-like method of solving. The first solver could produce values such as the 
+            length of the shortest solution to the maze. The second solver could produce values 
+            such as the average number of logical rules applied before reaching a solution. I 
+            considered many such values as potential predicators of puzzle difficulty.
+          </p>
+          <p>
+            I analysed the datasets produced by my 124 volunteers and 2 computer solvers using 
+            SPSS to determine which predictors were most useful. The conclusion was that in the 
+            case of this specific type of puzzle, the minimum solution length was the best 
+            indicator of difficulty.
+          </p>
+          <p>The full dissertation can be viewed <a href="files/SAJones-Abertay-Dissertation.pdf">here</a>.</p>
+          <p class="right-align"><span><a href="index.html">Back to main page</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
